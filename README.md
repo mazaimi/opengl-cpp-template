@@ -1,4 +1,4 @@
-# MyProject
+# opengl-cpp-template
 
 Template for an OpenGL and C++ project.
 
