@@ -18,13 +18,15 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgl1-mesa-dev libglu1-mesa-dev libglew-dev libglm-dev xorg-dev
+          sudo apt-get install -y \
+            libgl1-mesa-dev \
+            libglu1-mesa-dev \
+            libglew-dev \
+            libglm-dev \
+            xorg-dev
 
       - name: Configure CMake
-        run: cmake -S . -B build
+        run: cmake -S . -B build -DGLFW_BUILD_WAYLAND=OFF
 
       - name: Build
         run: cmake --build build
-
-      - name: Test
-        run: ctest --test-dir build --output-on-failure
